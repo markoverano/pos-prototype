@@ -27,7 +27,6 @@ app.UseExceptionHandler(errorApp =>
     errorApp.Run(async context =>
     {
         context.Response.StatusCode = 500;
-        context.Response.ContentType = "application/json";
 
         var feature = context.Features.Get<IExceptionHandlerFeature>();
         if (feature is not null)

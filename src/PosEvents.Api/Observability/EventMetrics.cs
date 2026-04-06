@@ -20,7 +20,7 @@ public class EventMetrics
         _lastProcessedAt = DateTime.UtcNow;
 
         _logger.LogInformation(
-            "Metrics snapshot: EventType={EventType} DurationMs={DurationMs} Counts={@Counts} LastProcessedAt={LastProcessedAt}",
+            "Metrics snapshot: EventType={EventType} DurationMs={DurationMs} Counts={Counts} LastProcessedAt={LastProcessedAt}",
             eventType, duration.TotalMilliseconds, GetCounts(), _lastProcessedAt);
     }
 

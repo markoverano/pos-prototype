@@ -1,6 +1,6 @@
-using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using PosEvents.Api.Models;
+using System.Text.Json;
 
 namespace PosEvents.Api.Processing.Handlers;
 
@@ -13,7 +13,7 @@ public class OrderPlacedHandler
         _logger = logger;
     }
 
-    public async Task HandleAsync(PosEvent posEvent)
+    public Task HandleAsync(PosEvent posEvent)
     {
         string? orderId = null;
         int itemCount = 0;
@@ -39,6 +39,6 @@ public class OrderPlacedHandler
 
         _logger.LogInformation("OrderPlaced {EventId}: fulfillment triggered", posEvent.Id);
 
-        await Task.CompletedTask;
+        return Task.CompletedTask;
     }
 }

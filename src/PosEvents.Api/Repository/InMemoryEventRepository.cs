@@ -20,7 +20,7 @@ public class InMemoryEventRepository : IEventRepository
     {
         lock (_lock)
         {
-            return Task.FromResult<IReadOnlyList<PosEvent>>(_events.AsReadOnly());
+            return Task.FromResult<IReadOnlyList<PosEvent>>(new List<PosEvent>(_events).AsReadOnly());
         }
     }
 }
