@@ -1,0 +1,6 @@
+@PosEvents.Api_HostAddress = http://localhost:5239
+
+GET {{PosEvents.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
